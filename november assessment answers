@@ -1,0 +1,41 @@
+#Yael Sheinman
+#CompA2/a
+#9th November 2017
+
+#DECLARE counter as INTEGER
+#DECLARE TeamName as STRING
+#DECLARE PlayerHits as INTEGER
+#DECLARE TotalHits as INTEGER
+#DECLARE AverageHits as REAL
+# DECLARE PointsEarned as INTEGER
+counter=0
+TeamName="Zeus"
+PlayerHits=0
+TotalHits=0
+AverageHits=0.0
+PointsEarned=0
+
+def get_details():
+    global TeamName, PlayerHits, TotalHits
+    TeamName= input("Enter team name")
+
+    for counter in range (1,7):
+        PlayerHits = int(input("Enter player hits"))
+
+        TotalHits = TotalHits + PlayerHits
+
+get_details()
+
+def calc_values():
+    global AverageHits, TotalHits, PointsEarned
+    AverageHits = TotalHits/6
+
+    if TotalHits > 50:
+        PointsEarned=1
+
+    if AverageHits >=10:
+        PointsEarned= PointsEarned + 1
+
+    print (TeamName, "has scored", PointsEarned)
+
+calc_values()
